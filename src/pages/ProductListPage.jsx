@@ -119,7 +119,7 @@ const ProductListPage = () => {
       <div className="breadcrumb desktop-only">
         <span className="breadcrumb-home">Home</span>
         <span className="breadcrumb-separator">›</span>
-        <span>Clothes</span>
+        <span className="breadcrumb-current">Clothes</span>
       </div>
 
       <div className="container">
