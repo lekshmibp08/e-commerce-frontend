@@ -51,47 +51,38 @@
 .filter-options {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
-.filter-option {
+.filter-option-row {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
   cursor: pointer;
+  padding: 4px 6px;
+  transition: background-color 0.2s ease;
+}
+
+.filter-option-row:hover {
+  background-color: #f9fafb;
+}
+
+.category-name {
   font-size: 14px;
-}
-
-.filter-option input[type="checkbox"] {
-  display: none;
-}
-
-.checkmark {
-  width: 16px;
-  height: 16px;
-  border: 1px solid #d0d5dd;
-  border-radius: 3px;
-  background: white;
+  color: #344054;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
+  gap: 4px;
 }
 
-.filter-option input[type="checkbox"]:checked + .checkmark {
-  background: #2874f0;
-  border-color: #2874f0;
-  color: white;
-}
-
-.option-text {
-  flex: 1;
-  text-transform: capitalize;
-}
-
-.option-count {
+.category-count {
   font-size: 12px;
   color: #667085;
+}
+
+.category-check {
+  color: #2874f0;
+  font-size: 16px;
 }
 
 /* Price Filter Styles */

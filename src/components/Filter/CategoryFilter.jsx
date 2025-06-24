@@ -26,21 +26,16 @@ const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
 
       <div className="filter-options">
         {filteredCategories.map((category) => (
-          <label key={category.name} className="filter-option">
-            <div className="option-content">
-              <span className="option-text">{category.name}</span>
-              <span className="option-count">{category.count}</span>
-            </div>
-            <div className="option-check">
-              {selectedCategory === category.name && <FiCheck className="check-icon" />}
-            </div>
-            <input
-              type="checkbox"
-              checked={selectedCategory === category.name}
-              onChange={() => onCategoryChange(category.name)}
-              style={{ display: "none" }}
-            />
-          </label>
+          <div
+            key={category.name}
+            className={`filter-option-row ${selectedCategory === category.name ? "selected" : ""}`}
+            onClick={() => onCategoryChange(category.name)}
+          >
+            <span className="category-name">
+              {category.name} <span className="category-count">({category.count})</span>
+            </span>
+            {selectedCategory === category.name && <FiCheck className="category-check" />}
+          </div>
         ))}
       </div>
     </FilterSection>
