@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import StarRating from "../components/UI/StarRating"
@@ -46,7 +44,7 @@ const ProductDetailPage = () => {
   return (
     <div className="product-detail-page">
       <div className="container">
-        {/* Breadcrumb */}
+
         <div className="breadcrumb desktop-only">
           <Link to="/">Home</Link>
           <span className="separator">›</span>
@@ -58,14 +56,13 @@ const ProductDetailPage = () => {
         </div>
 
         <div className="product-detail-container">
-          {/* Product Images */}
+
           <div className="product-images">
             <div className="main-image">
               <img src={product.image || "/placeholder.svg"} alt={product.title} />
             </div>
           </div>
 
-          {/* Product Info */}
           <div className="product-info">
             <div className="product-category">{product.category}</div>
             <h1 className="product-title">{product.title}</h1>

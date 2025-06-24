@@ -14,7 +14,6 @@ body {
   min-height: 100vh;
 }
 
-/* Loading Spinner */
 .loading {
   display: flex;
   justify-content: center;
@@ -40,7 +39,6 @@ body {
   }
 }
 
-/* Error Message */
 .error {
   color: #e74c3c;
   text-align: center;
@@ -51,7 +49,6 @@ body {
   margin: 20px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .container {
     padding: 0 15px;

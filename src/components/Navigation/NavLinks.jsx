@@ -1,4 +1,3 @@
-"use client"
 import { FiChevronDown, FiLogOut, FiUser } from "react-icons/fi"
 import Dropdown from "../UI/Dropdown"
 

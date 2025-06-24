@@ -1,5 +1,3 @@
-"use client"
-
 import { FiHeart } from "react-icons/fi"
 import { Link } from "react-router-dom"
 import StarRating from "../UI/StarRating"

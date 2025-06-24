@@ -1,18 +1,17 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
-import { FiGrid, FiList, FiFilter } from "react-icons/fi"
+import { FiFilter, FiGrid, FiList, FiChevronLeft, FiSliders } from "react-icons/fi";
 import FilterSidebar from "../components/Filter/FilterSidebar"
 import ProductCard from "../components/Product/ProductCard"
 import MobileFilterModal from "../components/Filter/MobileFilterModal"
-import Button from "../components/UI/Button"
+import useIsMobile from "../hooks/useIsMobile";
 import Pagination from "../components/UI/Pagination"
 import { getAllProducts } from "../services/api"
 import "./ProductListPage.css"
 
 const ProductListPage = () => {
   const [searchParams] = useSearchParams()
+  const isMobile = useIsMobile()
   const [allProducts, setAllProducts] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -28,7 +27,8 @@ const ProductListPage = () => {
     rating: "",
   })
 
-  const productsPerPage = 6
+  const productsPerPage = isMobile ? 4 : 6
+
 
   useEffect(() => {
     fetchProducts()
@@ -61,7 +61,6 @@ const ProductListPage = () => {
   const applyFiltersAndSort = () => {
     let result = [...allProducts]
 
-    // Apply filters
     if (filters.search) {
       result = result.filter((product) => product.title.toLowerCase().includes(filters.search.toLowerCase()))
     }
@@ -81,7 +80,6 @@ const ProductListPage = () => {
       result = result.filter((product) => product.rating && product.rating.rate >= Number.parseFloat(filters.rating))
     }
 
-    // Apply sorting
     switch (sortBy) {
       case "price-low":
         result.sort((a, b) => a.price - b.price)
@@ -124,31 +122,32 @@ const ProductListPage = () => {
 
       <div className="container">
         <div className="page-content">
-          {/* Desktop Sidebar */}
           <div className="desktop-only">
             <FilterSidebar filters={filters} onFilterChange={setFilters} />
           </div>
 
-          {/* Main Content */}
           <div className="main-content">
-            {/* Toolbar */}
             <div className="toolbar">
-              <div className="toolbar-left">
-                <Button variant="outline" className="mobile-only" onClick={() => setShowMobileFilter(true)}>
-                  <FiFilter /> Filter
-                </Button>
 
-                <div className="view-toggle desktop-only">
-                  <Button variant="outline" size="sm">
-                    <FiGrid />
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <FiList />
-                  </Button>
+              <div className="toolbar-left mobile-only">
+                <FiChevronLeft className="icon" />
+                <FiGrid className="icon" />
+                <FiSliders className="icon" onClick={() => setShowMobileFilter(true)} />
+              </div>
+            
+              <div className="toolbar-right mobile-only">
+                <span className="sort-label">Sort by:</span>
+                <span className="sort-value">Popular</span>
+              </div>
+            
+              <div className="toolbar-left desktop-only">
+                <div className="view-toggle">
+                  <FiGrid className="icon" />
+                  <FiSliders className="icon" onClick={() => setShowMobileFilter(true)} />
                 </div>
               </div>
-
-              <div className="toolbar-right">
+            
+              <div className="toolbar-right desktop-only">
                 <span className="sort-label">Sort by:</span>
                 <select className="sort-select" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
                   <option value="popular">Popular</option>
@@ -160,7 +159,6 @@ const ProductListPage = () => {
               </div>
             </div>
 
-            {/* Product Grid */}
             {currentProducts.length === 0 ? (
               <div className="no-products">
                 <h3>No products found</h3>
@@ -174,7 +172,6 @@ const ProductListPage = () => {
               </div>
             )}
 
-            {/* Pagination */}
             {totalPages > 1 && (
               <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
             )}
@@ -182,7 +179,6 @@ const ProductListPage = () => {
         </div>
       </div>
 
-      {/* Mobile Filter Modal */}
       <MobileFilterModal
         isOpen={showMobileFilter}
         onClose={() => setShowMobileFilter(false)}

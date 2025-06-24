@@ -1,10 +1,10 @@
 .filter-section {
-  padding: 10px; /* Controls the outer spacing */
+  padding: 10px; 
   border-bottom: 1px solid #f2f4f7;
 }
 
 .filter-box {
-  background-color: white; /* ✅ Your desired background */
+  background-color: white; 
   border-radius: 8px;
   overflow: hidden;
 }
@@ -94,7 +94,6 @@
   font-size: 16px;
 }
 
-/* Price Filter Styles */
 .price-histogram {
   display: flex;
   align-items: end;
@@ -163,7 +162,7 @@
 
 .rating-options {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 12px;
 }
 
@@ -172,7 +171,7 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
-  border: 1px solid #d0d5dd;   /* ✅ Always show light gray border */
+  border: 1px solid #d0d5dd;   
   border-radius: 6px;
   cursor: pointer;
   background-color: white;
@@ -180,11 +179,11 @@
 }
 
 .rating-option:hover {
-  background-color: #f9fafb;   /* Light hover effect */
+  background-color: #f9fafb;   
 }
 
 .rating-option.selected {
-  background-color: #e6f0ff;   /* ✅ Distinct background when selected */
-  border-color: #2874f0;       /* Blue border */
+  background-color: #e6f0ff;   
+  border-color: #2874f0;       
   font-weight: 600;
 }

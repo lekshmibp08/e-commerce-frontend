@@ -1,4 +1,3 @@
-"use client"
 
 import { useState } from "react"
 import { FiSearch, FiCheck } from "react-icons/fi"

@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { FiSearch } from "react-icons/fi"
 import "./SearchBar.css"
@@ -14,7 +12,7 @@ const SearchBar = ({ onSearch, placeholder = "Search Here..." }) => {
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value)
-    onSearch(e.target.value) // Live search
+    onSearch(e.target.value) 
   }
 
   return (

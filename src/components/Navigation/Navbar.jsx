@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Logo from "../UI/Logo"
@@ -29,7 +27,6 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="container">
-        {/* Desktop */}
         <div className="navbar-desktop">
           <div className="navbar-left">
             <Logo />
@@ -37,8 +34,6 @@ const Navbar = () => {
           </div>
           <NavLinks onCartClick={handleCartClick} onLogin={handleLogin} onLogout={logout} isLoggedIn={isLoggedIn} />
         </div>
-
-        {/* Mobile */}
         <MobileNav onCartClick={handleCartClick} onLogin={handleLogin} onLogout={logout} isLoggedIn={isLoggedIn} />
       </div>
     </nav>

@@ -1,5 +1,3 @@
-"use client"
-
 import { useEffect } from "react"
 import { FiX } from "react-icons/fi"
 import "./Modal.css"

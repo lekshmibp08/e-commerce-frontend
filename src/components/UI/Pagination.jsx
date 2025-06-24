@@ -14,7 +14,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     startPage = Math.max(1, endPage - maxVisiblePages + 1)
   }
 
-  // Previous button
   pages.push(
     <Button
       key="prev"
@@ -36,7 +35,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     )
   }
 
-  // Next button
   pages.push(
     <Button
       key="next"

@@ -1,4 +1,3 @@
-"use client"
 import { FiSearch, FiUser, FiShoppingCart } from "react-icons/fi"
 import Logo from "../UI/Logo"
 import Dropdown from "../UI/Dropdown"

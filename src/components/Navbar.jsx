@@ -25,9 +25,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Desktop Layout */}
         <div className="desktop-navbar">
-          {/* Left Section - Logo and Search */}
           <div className="navbar-left">
             <Link to="/" className="logo">
               <div className="logo-icon"></div>
@@ -54,7 +52,6 @@ const Navbar = () => {
             </form>
           </div>
 
-          {/* Right Section - Navigation Links */}
           <div className="navbar-right">
             <div className="nav-links">
               <div className="nav-item">
@@ -89,7 +86,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Layout */}
         <div className="mobile-navbar">
           <Link to="/" className="mobile-logo">
             <div className="mobile-logo-icon"></div>

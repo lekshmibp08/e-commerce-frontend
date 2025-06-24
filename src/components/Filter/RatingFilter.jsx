@@ -1,6 +1,3 @@
-"use client"
-
-import { FiCheck } from "react-icons/fi"
 import FilterSection from "./FilterSection"
 import StarRating from "../UI/StarRating"
 
