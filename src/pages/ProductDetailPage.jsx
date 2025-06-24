@@ -47,7 +47,7 @@ const ProductDetailPage = () => {
     <div className="product-detail-page">
       <div className="container">
         {/* Breadcrumb */}
-        <div className="breadcrumb">
+        <div className="breadcrumb desktop-only">
           <Link to="/">Home</Link>
           <span className="separator">›</span>
           <Link to="/products">Products</Link>
