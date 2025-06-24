@@ -1,7 +1,45 @@
-const BASE_URL = "https://fakestoreapi.com"
+import axios from "axios"
+
+const BASE_URL = process.env.REACT_APP_BASE_URL
+
+const axiosInstance = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+})
+
+axiosInstance.interceptors.response.use(
+  (response) => response.data,
+  (error) => {
+    console.error("API call failed:", error)
+    return Promise.reject(error)
+  }
+)
+
+export const getAllProducts = () => axiosInstance.get("/products")
+
+export const getProductById = (id) => axiosInstance.get(`/products/${id}`)
+
+export const registerUser = (userData) => axiosInstance.post("/users", userData)
+
+export const loginUser = (credentials) => axiosInstance.post("/auth/login", credentials)
+
+
+
+
+
+
+
+
+
+/*
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 const apiCall = async (url, options = {}) => {
   try {
+    console.log('ENV',process.env.REACT_APP_BASE_URL);
+    
     const response = await fetch(url, {
       headers: {
         "Content-Type": "application/json",
@@ -23,8 +61,6 @@ const apiCall = async (url, options = {}) => {
 
 export const getAllProducts = () => apiCall(`${BASE_URL}/products`)
 export const getProductById = (id) => apiCall(`${BASE_URL}/products/${id}`)
-export const getCategories = () => apiCall(`${BASE_URL}/products/categories`)
-export const getProductsByCategory = (category) => apiCall(`${BASE_URL}/products/category/${category}`)
 
 export const registerUser = (userData) =>
   apiCall(`${BASE_URL}/users`, {
@@ -37,3 +73,4 @@ export const loginUser = (credentials) =>
     method: "POST",
     body: JSON.stringify(credentials),
   })
+*/
