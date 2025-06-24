@@ -1,6 +1,15 @@
 .filter-section {
+  padding: 10px; /* Controls the outer spacing */
   border-bottom: 1px solid #f2f4f7;
 }
+
+.filter-box {
+  background-color: white; /* ✅ Your desired background */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
 
 .filter-section:last-child {
   border-bottom: none;

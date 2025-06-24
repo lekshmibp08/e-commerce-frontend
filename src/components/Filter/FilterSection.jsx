@@ -9,12 +9,14 @@ const FilterSection = ({ title, children, defaultOpen = true }) => {
 
   return (
     <div className="filter-section">
-      <button className="filter-section-header" onClick={() => setIsOpen(!isOpen)}>
-        <span>{title}</span>
-        {isOpen ? <FiChevronUp /> : <FiChevronDown />}
-      </button>
-      {isOpen && <div className="filter-section-content">{children}</div>}
-    </div>
+  <div className="filter-box">
+    <button className="filter-section-header" onClick={() => setIsOpen(!isOpen)}>
+      <span>{title}</span>
+      {isOpen ? <FiChevronUp /> : <FiChevronDown />}
+    </button>
+    {isOpen && <div className="filter-section-content">{children}</div>}
+  </div>
+</div>
   )
 }
 
