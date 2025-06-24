@@ -11,15 +11,13 @@ const RatingFilter = ({ selectedRating, onRatingChange }) => {
     <FilterSection title="Rating">
       <div className="rating-options">
         {ratings.map((rating) => (
-          <label key={rating} className="rating-option">
-            <input
-              type="checkbox"
-              checked={selectedRating === rating.toString()}
-              onChange={() => onRatingChange(rating.toString())}
-            />
-            <span className="checkmark">{selectedRating === rating.toString() && <FiCheck />}</span>
+          <div
+            key={rating}
+            className={`rating-option ${selectedRating === rating.toString() ? "selected" : ""}`}
+            onClick={() => onRatingChange(rating.toString())}
+          >
             <StarRating rating={rating} />
-          </label>
+          </div>
         ))}
       </div>
     </FilterSection>

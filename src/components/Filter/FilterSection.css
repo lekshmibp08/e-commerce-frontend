@@ -162,14 +162,29 @@
 }
 
 .rating-options {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2-column layout */
   gap: 12px;
 }
 
 .rating-option {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid #d0d5dd;   /* ✅ Always show light gray border */
+  border-radius: 6px;
   cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.rating-option:hover {
+  background-color: #f9fafb;   /* Light hover effect */
+}
+
+.rating-option.selected {
+  background-color: #e6f0ff;   /* ✅ Distinct background when selected */
+  border-color: #2874f0;       /* Blue border */
+  font-weight: 600;
 }
