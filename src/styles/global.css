@@ -10,11 +10,12 @@ body {
   color: #333;
 }
 
-.App {
-  min-height: 100vh;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* Loading Spinner */
 .loading {
   display: flex;
   justify-content: center;
@@ -40,7 +41,6 @@ body {
   }
 }
 
-/* Error Message */
 .error {
   color: #e74c3c;
   text-align: center;
@@ -51,9 +51,32 @@ body {
   margin: 20px;
 }
 
-/* Responsive Design */
+.btn {
+  padding: 8px 16px;
+  border: 1px solid #d0d5dd;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  border-color: #98a2b3;
+}
+
+.btn-primary {
+  background: #2874f0;
+  color: white;
+  border-color: #2874f0;
+}
+
+.btn-primary:hover {
+  background: #1e5bb8;
+}
+
 @media (max-width: 768px) {
   .container {
-    padding: 0 15px;
+    padding: 0 16px;
   }
 }

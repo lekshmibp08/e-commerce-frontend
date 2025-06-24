@@ -1,0 +1,57 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.logo-icon {
+  background: #2874f0;
+  border-radius: 50%;
+  position: relative;
+}
+
+.logo-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+.logo-text {
+  color: #2874f0;
+  font-weight: 500;
+}
+
+.logo-md .logo-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-md .logo-icon::after {
+  width: 24px;
+  height: 24px;
+}
+
+.logo-md .logo-text {
+  font-size: 16px;
+}
+
+.logo-sm .logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.logo-sm .logo-icon::after {
+  width: 20px;
+  height: 20px;
+}
+
+.logo-sm .logo-text {
+  font-size: 14px;
+}

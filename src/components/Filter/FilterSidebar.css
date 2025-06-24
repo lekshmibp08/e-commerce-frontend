@@ -1,0 +1,21 @@
+.filter-sidebar {
+  width: 264px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-header {
+  display: flex;
+  gap: 8px;
+  padding: 20px;
+  border-bottom: 1px solid #f2f4f7;
+}
+
+@media (max-width: 768px) {
+  .filter-sidebar {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
