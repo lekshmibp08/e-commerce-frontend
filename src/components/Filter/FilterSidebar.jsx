@@ -41,8 +41,8 @@ const FilterSidebar = ({ filters, onFilterChange }) => {
   return (
     <div className="filter-sidebar">
       <div className="filter-header">
-        <button className="btn">Filter</button>
-        <button className="btn">Advanced</button>
+        <span className="filter-title">Filter</span>
+        <span className="filter-advanced">Advanced</span>
       </div>
 
       {!loading && (

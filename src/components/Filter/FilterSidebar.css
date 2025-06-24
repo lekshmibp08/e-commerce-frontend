@@ -1,15 +1,29 @@
 .filter-sidebar {
   width: 264px;
-  background: white;
+  background: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .filter-header {
   display: flex;
-  gap: 8px;
-  padding: 20px;
-  border-bottom: 1px solid #f2f4f7;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 20px 20px 0 20px;
+}
+
+.filter-title {
+  font-weight: 600;
+  color: #000;
+}
+
+.filter-advanced {
+  font-weight: 400;
+  color: #333;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
